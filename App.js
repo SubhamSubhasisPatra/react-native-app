@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import {
+  Dimensions,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -12,8 +13,10 @@ import {
   Platform,
   StatusBar as StatusBarNative, 
 } from "react-native";
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks' 
 
 export default function App() {
+  console.log(useDeviceOrientation())
   let count = 0;
   let clicked = () => {
     count += 1;
@@ -40,7 +43,14 @@ export default function App() {
         {text: "Cancel", onPress: () => console.log("Cancel Pressed"), style: "cancel"},
         {text: "OK", onPress: () => console.log("OK Pressed")},
       ])} title="Click Me" />
-      <StatusBar style="auto" />
+      <StatusBar style="auto" /> 
+      <View style={{
+        backgroundColor  : "pink",
+        width:"100%",
+        height:"30%",
+      }}>
+
+      </View>
     </SafeAreaView>
   );
 }
