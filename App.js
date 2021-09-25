@@ -9,6 +9,7 @@ import WelcomeScreen from "./app/screens/WelcomeScreen";
 import UserIcon from "./app/components/UserIcon";
 import Screen from "./app/components/Screen";
 import ListItem from "./app/components/ListItem";
+import AccountScreen from "./app/screens/AccountScreen";
 
 export default function App() {
   // welcome screen
@@ -46,14 +47,17 @@ export default function App() {
   // messages screen
   // return <MessagesScreen/>
   // icon components
-  return (
-    <Screen>
-      {/* <UserIcon name="trash-can" size={40} />
-      <UserIcon name="email" size={40} /> */}
-      <ListItem
-        title="subham"
-        ImageComponent={<UserIcon name="email" size={40} />}
-      />
-    </Screen>
-  );
+  // return (
+  // <Screen>
+  //   {/* <UserIcon name="trash-can" size={40} />
+  //   <UserIcon name="email" size={40} /> */}
+  //   <ListItem
+  //     title="subham"
+  //     ImageComponent={<UserIcon name="email" size={40} />}
+  //   />
+  // </Screen>
+  // );
+
+  // Accoutn Screen
+  return <AccountScreen />;
 }

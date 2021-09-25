@@ -17,7 +17,7 @@ function UserIcon({
         backgroundColor,
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 10,
+        margin: 10,
         flexDirection: "row",
       }}
     >

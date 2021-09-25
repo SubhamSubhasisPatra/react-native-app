@@ -38,11 +38,13 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     marginTop: 20,
+    backgroundColor: colors.white,
   },
   image: {
     width: 70,
     height: 70,
     borderRadius: 35,
+    margin: 5,
   },
   subTitle: {
     color: colors.medium,
@@ -50,7 +52,6 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     fontSize: 16,
-    marginTop: 15,
   },
   textContainer: {
     marginLeft: 10,
