@@ -1,38 +1,61 @@
-import React from 'react';
-import { View, StyleSheet, Image, Text } from 'react-native';
-import colors from '../config/colors';
+import React from "react";
+import {
+  View,
+  StyleSheet,
+  Image,
+  Text,
+  TouchableHighlight,
+} from "react-native";
+import Swipeable from "react-native-gesture-handler/Swipeable";
 
-function ListItem({title , subTitle, image}) {
-    return (
+import colors from "../config/colors";
+
+function ListItem({
+  title,
+  subTitle,
+  image,
+  ImageComponent,
+  onPress,
+  renderRightActions,
+}) {
+  return (
+    <Swipeable renderRightActions={renderRightActions}>
+      <TouchableHighlight underlayColor={colors.medium} onPress={onPress}>
         <View style={styles.container}>
-            <Image source={image} style={styles.image}/>
-            <View style={styles.textContainer}>
-                <Text style={styles.title}>{title}</Text>
-                <Text style={styles.subTitle}>{subTitle}</Text>
-            </View>
+          {ImageComponent}
+          {image && <Image source={image} style={styles.image} />}
+          <View style={styles.textContainer}>
+            <Text style={styles.title}>{title}</Text>
+            {subTitle && <Text style={styles.subTitle}>{subTitle}</Text>}
+          </View>
         </View>
-    );
+      </TouchableHighlight>
+    </Swipeable>
+  );
 }
 
 const styles = StyleSheet.create({
-    container : {
-        flexDirection: 'row',
-        marginTop: 20,
-    },
-    image : {
-        width: 70,
-        height: 70,
-        borderRadius: 35,
-        marginRight: 10,
-    },
-    subTitle: {
-        color: colors.medium
-    },
-    title : {
-        fontWeight: 'bold',
-        fontSize: 16,
-        marginTop: 15,
-    }
-})
+  container: {
+    flexDirection: "row",
+    marginTop: 20,
+  },
+  image: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+  },
+  subTitle: {
+    color: colors.medium,
+  },
+  title: {
+    fontWeight: "bold",
+    fontSize: 16,
+    marginTop: 15,
+  },
+  textContainer: {
+    marginLeft: 10,
+    justifyContent: "center",
+  },
+});
 
 export default ListItem;

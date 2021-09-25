@@ -13,8 +13,6 @@ const styles = StyleSheet.create({
     height: 2,
     justifyContent: "center",
     alignSelf: "center",
-    marginLeft: "3%",
-    marginRight: "3%",
     backgroundColor: colors.medium,
   },
 });

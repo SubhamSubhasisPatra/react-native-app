@@ -6,12 +6,14 @@ import ListigDetailsScreen from "./app/screens/ListigDetailsScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
+import UserIcon from "./app/components/UserIcon";
+import Screen from "./app/components/Screen";
+import ListItem from "./app/components/ListItem";
 
 export default function App() {
-  // welcome screen 
+  // welcome screen
   // return <WelcomeScreen />;
-
-  // for login buttonn 
+  // for login buttonn
   // return (
   //   <View
   //     style={{
@@ -23,28 +25,35 @@ export default function App() {
   //     <AppButton title="Log In"></AppButton>
   //   </View>
   // );
-
-  // for card 
+  // for card
   // return (
   //   <View style={{
   //     backgroundColor: "#f8f4f4",
   //     padding: 20,
   //     paddingTop: 100,
   //   }}>
-  //     <Card 
+  //     <Card
   //       title="Aston Martin"
   //       subtitle="100$"
   //       image={require("./app/assets/car.jpg")}
   //     />
   //   </View>
   // );
-
   // list of cards
   // return <ListigDetailsScreen/>
-
-  // view image screen 
+  // view image screen
   // return <ViewImageScreen/>;
-
   // messages screen
-  return <MessagesScreen/>
+  // return <MessagesScreen/>
+  // icon components
+  return (
+    <Screen>
+      {/* <UserIcon name="trash-can" size={40} />
+      <UserIcon name="email" size={40} /> */}
+      <ListItem
+        title="subham"
+        ImageComponent={<UserIcon name="email" size={40} />}
+      />
+    </Screen>
+  );
 }
