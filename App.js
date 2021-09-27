@@ -1,5 +1,5 @@
-import React from "react";
-import { View } from "react-native";
+import React, { useState } from "react";
+import { Text, TextInput, View } from "react-native";
 import AppButton from "./app/components/AppButton";
 import Card from "./app/components/Card";
 import ListigDetailsScreen from "./app/screens/ListigDetailsScreen";
@@ -10,6 +10,7 @@ import UserIcon from "./app/components/UserIcon";
 import Screen from "./app/components/Screen";
 import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/screens/AccountScreen";
+import AppTextInput from "./app/components/AppTextInput";
 
 export default function App() {
   // welcome screen
@@ -59,5 +60,13 @@ export default function App() {
   // );
 
   // Accoutn Screen
-  return <AccountScreen />;
+  // return <AccountScreen />;
+
+  // Input componet
+  const [name, setName] = useState("");
+  return (
+    <Screen>
+      <AppTextInput placeholder="Enter Name" icon="email" />
+    </Screen>
+  );
 }
