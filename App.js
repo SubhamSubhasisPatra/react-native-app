@@ -11,6 +11,7 @@ import Screen from "./app/components/Screen";
 import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/screens/AccountScreen";
 import AppTextInput from "./app/components/AppTextInput";
+import AppPicker from "./app/components/AppPicker";
 
 export default function App() {
   // welcome screen
@@ -63,9 +64,22 @@ export default function App() {
   // return <AccountScreen />;
 
   // Input componet
-  const [name, setName] = useState("");
+  const categories = [
+    { label: "Shirts", value: 1 },
+    { label: "Hats", value: 2 },
+    { label: "Jeans", value: 3 },
+  ];
+
+  const [category, setCategory] = useState();
   return (
     <Screen>
+      <AppPicker
+        selectedItem={category}
+        onSelectItem={(item) => setCategory(item)}
+        icon="apps"
+        placeholder="Select one"
+        items={categories[0]}
+      />
       <AppTextInput placeholder="Enter Name" icon="email" />
     </Screen>
   );
