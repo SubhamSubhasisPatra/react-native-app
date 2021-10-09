@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     width: "100%",
     padding: 15,
     marginVertical: 10,
+    overflow: "hidden",
   },
   textInput: defaultStyles.text,
   icon: {
