@@ -8,8 +8,6 @@ function Screen({ children, style }) {
 const styles = StyleSheet.create({
   screen: {
     paddingTop: Platform.OS === "ios" ? 0 : StatusBar.currentHeight,
-    // marginLeft: "3%",
-    // marginRight: "3%",
     flex: 1,
   },
 });

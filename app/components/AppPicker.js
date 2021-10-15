@@ -34,9 +34,14 @@ function AppPicker({ icon, items, selectedItem, onSelectItem, placeholder }) {
               style={styles.icon}
             />
           )}
-          <Text style={styles.text}>
+          {selectedItem ? (
+            <Text style={styles.text}>{selectedItem.label}</Text>
+          ) : (
+            <Text style={styles.placeholder}>{placeholder}</Text>
+          )}
+          {/* <Text style={styles.text}>
             {selectedItem ? selectedItem.label : placeholder}
-          </Text>
+          </Text> */}
         </View>
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">
@@ -73,6 +78,10 @@ const styles = StyleSheet.create({
   text: { ...defaultStyles.text, flex: 1 },
   icon: {
     margin: 10,
+  },
+  placeholder: {
+    color: defaultStyles.colors.medium,
+    flex: 1,
   },
 });
 
